@@ -9,31 +9,11 @@
 </head>
 
 <body>
-    <div id="header-container">
+    <div id="root">
         <h1>Hi there! Fazil here</h1>
     </div>
-
-    <!-- Hello World using Javascript -->
-    <!-- <script>
-        const heading = document.createElement('h1')
-        heading.innerHTML = 'Hello World using JavaScript!'
-
-        const header = document.getElementById('header-container')
-        header.appendChild(heading)
-    </script> -->
     
-    
-    <!-- Hello World using React -->
-    <!-- <script>
-        const heading = React.createElement('h1', {}, 'Hello World from React!')
-        const root = ReactDOM.createRoot(document.getElementById('header-container'))
-        root.render(heading)
-        
-    </script> -->
-    
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="./app.js"></script>
+    <script type="module" src="./app.js"></script>
 </body>
 
 </html>

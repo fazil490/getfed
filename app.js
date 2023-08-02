@@ -1,38 +1,22 @@
-// In case of creating nested html tags like,
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-/* <div id="parent">
-    <div id="child">
-        <h1>This is an H1 Tag</h1>
-    </div>
-</div>  */
+// React Element
+// const heading = React.createElement('h1', {id: 'heading'}, 'Hi There, Fazil here from NReact🚀')
 
-const parent = React.createElement('div', {
-        id: 'parent'
-    },
-    [React.createElement('div', {
-                id: 'child'
-            },
-            [React.createElement('h1', {}, 'This is an H1 Tag'),
-                React.createElement('h2', {}, 'This is an H2 Tag')
-            ]
-        ),
-        React.createElement('div', {
-                id: 'child2'
-            },
-            [React.createElement('h1', {}, 'This is an H1 Tag'),
-                React.createElement('h2', {}, 'This is an H2 Tag')
-            ]
-        )
-    ]
-)
+//React Element using JSX
+const heading = (
+  <h1 className="heading">Hi There, FAZIL here from NReact🚀</h1>
+);
 
-// const heading = React.createElement('h1', {
-//     id: 'heading'
-// }, 'Hello World from React!')
+//React Functional Component
+const HeadingComponent = () => (
+  <div id="container">
+    {heading}
+    <h1>React Component is here for you👋🔥</h1>
+  </div>
+);
 
-// console.log(heading); //Javascript Object
-console.log(parent); //Javascript Object
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const root = ReactDOM.createRoot(document.getElementById('header-container'))
-
-root.render(parent) //Converts Javascript object to a html tag
+root.render(<HeadingComponent />);
