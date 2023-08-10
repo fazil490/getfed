@@ -89,3 +89,17 @@
     <h1>React Component is here for you👋🔥</h1>
     </div>
     );
+
+# Food Delivery App
+    - Header
+        - Navbar
+        - NavLists
+    - Main
+        - Restaurant Container
+            - Restaurant Cards
+    - Footer
+        - Social Links
+        - Copyright
+        - Links
+        - Address
+        - Contact
