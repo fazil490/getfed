@@ -22,6 +22,7 @@ const Header = () => {
                 type="search"
                 placeholder="Search for Restaurants and Foods"
               ></input>
+              <button id="search-btn">Search</button>
             </form>
           </div>
           <div className="nav-list">
