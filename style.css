@@ -6,7 +6,7 @@
     --font-color: #000;
     --btn-grn-color: #16a34a;
     --wh-bg: #ffff;
-    --bg-color: #f3f4f6;
+    --bg-grey: #f3f4f6;
 }
 
 * {
@@ -17,7 +17,7 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: var(--bg-color);
+    background-color: var(--wh-bg);
 }
 
 a {
@@ -66,7 +66,7 @@ ul {
 
 .serach-box {
     border: none;
-    background-color: var(--bg-color);
+    background-color: var(--bg-grey);
     border-radius: 0.3rem;
     padding: 10px;
     width: 15rem;
@@ -114,10 +114,19 @@ ul {
 }
 
 .rest-cards {
-    margin: 2rem;
+    margin: 2rem ;
     background-color: var(--wh-bg);
     cursor: pointer;
     border-radius: 1rem;
+    box-shadow: 0 1px 3px rgba(0 0 0 / 10%),
+        0 2px 2px rgba(0 0 0 / 6%),
+        0 0 2px rgba(0 0 0 / 7%);
+}
+
+.rest-cards:hover {
+    box-shadow: 0 1px 3px rgba(0 0 0 / 50%),
+    0 2px 2px rgba(0 0 0 / 30%),
+    0 0 2px rgba(0 0 0 / 35%);
 }
 
 .rest-cards img {
@@ -132,25 +141,57 @@ ul {
     padding: 1rem ;
 }
 
-.rest-info .cuisines {
-    margin-top: 10px;
-    font-size: small;
-}
-
-.rest-rating-ttr-price {
-    font-size: smaller;
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
+.rest-info * {
     margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid gray;
 }
 
-#rating {
+.rest-info .cuisines {
+    font-size: smaller;
+}
+
+.rest-info #rating {
     background-color: var(--btn-grn-color);
     color: white;
+    width: fit-content;
     padding: 3px;
-    margin-right: 5px;
     border-radius: 5px;
+}
+
+/* Shimmer */
+.shimmer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.shimmer-card {
+    margin: 2rem ;
+    box-shadow: 0 1px 3px rgba(0 0 0 / 10%),
+    0 2px 2px rgba(0 0 0 / 6%),
+    0 0 2px rgba(0 0 0 / 7%);
+    cursor: pointer;
+    border-radius: 1rem;
+}
+
+.shimmer-image {
+    border-radius: 1rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 250px;
+    height: 180px;
+    background-color: var(--bg-grey);
+}
+
+.shimmer-title, .shimmer-rating, .shimmer-desc {
+    width: 70%;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: var(--bg-grey);
+}
+
+.shimmer-rating{
+    width: 20%;
+}
+
+.shimmer-desc{
+    width: 70%;
 }
