@@ -1,26 +1,19 @@
-import {CDN_URL} from "../utils/constants"
+import { CDN_URL } from "../utils/constants";
 
 const RestaurantsList = ({ restData }) => {
-    const {cloudinaryImageId, name, cuisines, avgRating, costForTwo} = restData?.info;
-    return (
-      <div className="rest-cards">
-        <img
-          src={
-             CDN_URL+
-            cloudinaryImageId
-          }
-        />
-        <div className="rest-info">
-          <h3>{name}</h3>
-          <p className="cuisines">{cuisines.join(", ")}</p>
-          <div className="rest-rating-ttr-price">
-            <p id="rating">{avgRating}⭐</p>
-            <p>{restData.info.sla.deliveryTime} Mins to reach</p>
-            <p>{costForTwo}</p>
-          </div>
-        </div>
+  const { cloudinaryImageId, name, cuisines, avgRating, areaName} =
+    restData?.info;
+  return (
+    <div className="rest-cards">
+      <img src={CDN_URL + cloudinaryImageId} />
+      <div className="rest-info">
+        <h3>{name}</h3>
+        <p id="rating">{avgRating}⭐</p>
+        <p className="cuisines">{cuisines.join(", ")}</p>
+        <h5 className="location">{areaName}</h5>
       </div>
-    );
-  };
+    </div>
+  );
+};
 
 export default RestaurantsList;
