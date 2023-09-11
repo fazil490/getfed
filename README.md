@@ -106,3 +106,17 @@
 
 # React Hooks
     - useState()
+    - useEffect()
+    - useRouteError()
+
+# Routing
+    - npm react-router-dom
+    - {createBrowserRouter, RouterProvider}
+    - {Outlet}
+    - {Link}
+    - {useRouteError} 
+    - {useParams}
+
+# Types of Routing
+    - server side routing (recommended for react, component based routing, single page application)
+    - client side routing (traditional routing using anchor tags linking between index.html, about.html etc)

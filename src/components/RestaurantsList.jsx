@@ -7,7 +7,7 @@ const RestaurantsList = ({ restData }) => {
     <div className="rest-cards">
       <img src={CDN_URL + cloudinaryImageId} />
       <div className="rest-info">
-        <h3>{name}</h3>
+        <h4>{name}</h4>
         <p id="rating">{avgRating}⭐</p>
         <p className="cuisines">{cuisines.join(", ")}</p>
         <h5 className="location">{areaName}</h5>
