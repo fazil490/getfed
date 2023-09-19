@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { listOfRest, setListOfRest } from "./Main";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
+
+  const onlineStatus = useOnlineStatus()
+
   const [authBtn, setAuthBtn] = useState("Login");
   const [searchText, setSearchText] = useState("");
   const [filteredList, setFilteredList] = useState("");
@@ -20,7 +24,7 @@ const Header = () => {
         </div>
         <div className="location">
           <img />
-          <a href="">Chennai, India</a>
+          <Link to="/" className="link">Chennai, India</Link>
         </div>
         <div className="search">
           <input
@@ -59,6 +63,10 @@ const Header = () => {
             </li>
             <li>
               {" "}
+              <Link to="/groceries" className="link">Groceries</Link>
+            </li>
+            <li>
+              {" "}
               <Link className="link">Cart</Link>
             </li>
             <li>
@@ -83,6 +91,10 @@ const Header = () => {
               >
                 {authBtn}
               </button>
+            </li>
+            <li>
+                {onlineStatus === true ? "🟢" : "🔴"}
+                {/* ✅🟢❌🚫❗ */}
             </li>
           </ul>
         </div>

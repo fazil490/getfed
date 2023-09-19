@@ -3,8 +3,11 @@ import restList from "../utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Main = () => {
+
+  const onlineStatus = useOnlineStatus();
   const [listOfRest, setListOfRest] = useState([]);
 
   useEffect(() => {
@@ -20,6 +23,14 @@ const Main = () => {
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+
+  if(onlineStatus === false) return (
+  <div className="internet-error">😕
+  <h3>OOPS!!!</h3>
+  <h4>Your Connection was Interrupted!</h4>
+  <h5>Try to connect to a wifi, network cables, modem or router</h5>
+  </div> 
+  )
 
   return listOfRest && listOfRest.length === 0 ? (
     <Shimmer />
@@ -40,7 +51,7 @@ const Main = () => {
         </button>
         <div className="rest-list">
           {listOfRest?.map((restaurant) => (
-            <Link className="menu-routing" key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}> <RestaurantsList restData={restaurant} /></Link>
+            <Link className="menu-routing" key={restaurant.info.id} to={"/restaurants/" + restaurant?.info?.id}> <RestaurantsList restData={restaurant} /></Link>
           ))}
         </div>
       </div>
