@@ -120,3 +120,25 @@
 # Types of Routing
     - server side routing (recommended for react, component based routing, single page application)
     - client side routing (traditional routing using anchor tags linking between index.html, about.html etc)
+
+# Class Based Components - LifeCycle
+    - Render Phase 👇
+    - Parent Constructor
+    - Parent Render
+
+        - FirstChild Constructor
+        - FirstChild Render
+        - SecondChild Constructor
+        - SecondChild Render
+
+        - Commit Phase 👇
+        - FirstChild componentDidMount
+        - SecondChild componentDidMount
+
+    - Parent componentDidMount
+
+# ComponentDidUpdate()
+    - This method works when any changes occurs like useEffect()
+
+# ComponentWillUnmount()
+    - This method works when the components are unmounted or when we used to route to other components.
