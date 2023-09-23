@@ -1,100 +1,89 @@
-import { useState } from "react";
-import { listOfRest, setListOfRest } from "./Main";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import userContext from "../context/userContext";
 
 const Header = () => {
+  const onlineStatus = useOnlineStatus();
 
-  const onlineStatus = useOnlineStatus()
+  const { loggedInUser } = useContext(userContext);
 
   const [authBtn, setAuthBtn] = useState("Login");
-  const [searchText, setSearchText] = useState("");
-  const [filteredList, setFilteredList] = useState("");
   return (
-    <header className="header">
-      <nav className="nav-bar">
+    <header className="header border-b">
+      <nav className="nav-bar flex justify-between items-center p-4 w-[90%] mx-[auto] my-4">
         <div className="nav-brand">
           <Link to="/" className="link">
-            <h1 className="brand-name">
+            <h1 className="brand-name text-3xl font-bold text-green-600">
               {" "}
-              <span className="getfed">G</span>et
-              <span className="getfed">F</span>ed{" "}
+              <span className="getfed text-red-500">G</span>et
+              <span className="getfed text-red-500">F</span>ed{" "}
             </h1>
           </Link>
         </div>
         <div className="location">
           <img />
-          <Link to="/" className="link">Chennai, India</Link>
-        </div>
-        <div className="search">
-          <input
-            className="serach-box"
-            type="search"
-            placeholder="Search for Restaurants and Foods"
-            value={searchText}
-            onChange={(e) => {
-              setSearchText(e.target.value);
-            }}
-          ></input>
-          <button
-            id="search-btn"
-            onClick={() => {
-              const filterForSearch = listOfRest.filter((res) => {
-                res.info.name.toLowerCase().includes(searchText.toLowerCase());
-              });
-              setListOfRest(filterForSearch);
-              console.log(searchText);
-            }}
+          <Link
+            to="/"
+            className="link text-lg text-green-600 hover:text-red-500"
           >
-            Search
-          </button>
+            Chennai, India
+          </Link>
         </div>
+
         <div className="nav-list">
-          <ul>
-            <li>
+          <ul className="flex gap-7 ">
+            <li className=" text-green-600 hover:text-red-500">
               {" "}
               <Link to="/" className="link">
                 Home
               </Link>
             </li>
-            <li>
+            <li className="text-green-600 hover:text-red-500">
               {" "}
-              <Link className="link">Restaurants</Link>
+              <Link to="/" className="link">Restaurants</Link>
             </li>
-            <li>
+            <li className=" text-green-600 hover:text-red-500">
               {" "}
-              <Link to="/groceries" className="link">Groceries</Link>
+              <Link to="/groceries" className="link">
+                Groceries
+              </Link>
             </li>
-            <li>
+            <li className=" text-green-600 hover:text-red-500">
               {" "}
               <Link className="link">Cart</Link>
             </li>
-            <li>
+            <li className=" text-green-600 hover:text-red-500">
               {" "}
               <Link to="/about" className="link">
                 About
               </Link>
             </li>
-            <li>
+            <li className=" text-green-600 hover:text-red-500">
               {" "}
               <Link to="/contact" className="link">
                 Contact
               </Link>
             </li>
-            <li>
-              <button
-                onClick={() => {
-                  authBtn === "Login"
-                    ? setAuthBtn("Logout")
-                    : setAuthBtn("Login");
-                }}
-              >
-                {authBtn}
-              </button>
+            <li className=" text-green-600 hover:text-red-500">
+              <Link to="/login">
+                <button
+                  onClick={() => {
+                    authBtn === "Login"
+                      ? setAuthBtn("Logout")
+                      : setAuthBtn("Login");
+                  }}
+                >
+                  {authBtn}
+                </button>
+              </Link>
             </li>
-            <li>
-                {onlineStatus === true ? "🟢" : "🔴"}
-                {/* ✅🟢❌🚫❗ */}
+            <li className=" text-green-600 hover:text-red-500">
+              {loggedInUser}
+            </li>
+            <li className=" text-green-600 hover:text-red-500">
+              {onlineStatus === true ? "🟢" : "🔴"}
+              {/* ✅🟢❌🚫❗ */}
             </li>
           </ul>
         </div>
