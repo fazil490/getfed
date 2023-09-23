@@ -142,3 +142,20 @@
 
 # ComponentWillUnmount()
     - This method works when the components are unmounted or when we used to route to other components.
+
+# Single Responsibility Principle
+    - Use Custom Hooks
+    - Make sure the component is working only on a rendering process not on the fetching or any data process.
+
+# Higher Order Component
+    - Higher Order Component is a function that took a component as an argument modify it and return a new component.
+    - const functionName = (input) => {
+        return() => {
+            return(JSX)
+        }
+    };
+
+# Context 
+    - Context API allows to pass in data through any components.
+    - createContext({}) - to create a context
+    - useContext(contextName) - to use a context
