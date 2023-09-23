@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&family=Roboto&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&family=Roboto&display=swap');
 
 :root {
     --primary-color: #15803d;
@@ -28,7 +34,7 @@ ul {
     list-style-type: none;
 }
 
-/* Nav Bar */
+----------------------------------------Nav Bar----------------------------------------
 .header {
     background-color: var(--wh-bg);
     color: var(--primary-color);
@@ -64,7 +70,7 @@ ul {
     font-size: xx-large;
 }
 
-.serach-box {
+.search-box {
     border: none;
     background-color: var(--bg-grey);
     border-radius: 0.3rem;
@@ -97,7 +103,7 @@ ul {
     color: var(--secondary-color);
 }
 
-/* Main-Container */
+----------------------------------------Main-Container----------------------------------------
 .main-container .menu-routing {
     color: var(--font-color);
 }
@@ -109,7 +115,7 @@ ul {
 }
 
 .filter-btn,
-#search-btn {
+.search-btn {
     cursor: pointer;
     color: grey;
     padding: 10px;
@@ -173,7 +179,7 @@ ul {
     border-radius: 5px;
 }
 
-/* Shimmer */
+----------------------------------------Shimmer----------------------------------------
 .shimmer-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -210,7 +216,7 @@ ul {
     width: 70%;
 }
 
-/* Rest Menu */
+----------------------------------------Rest Menu----------------------------------------
 
 .rest-menu {
     width: 50%;
@@ -285,6 +291,7 @@ ul {
 .menu-item-desc {
     font-size: small;
     color: grey;
+    width: 90%;
 }
 
 .rest-menu-item-list {
@@ -325,4 +332,4 @@ ul {
     width: 50%;
     margin: 10rem auto auto auto;
     text-align: center;
-}
+} */
