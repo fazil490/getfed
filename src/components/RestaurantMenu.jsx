@@ -1,11 +1,16 @@
 import { useParams } from "react-router-dom";
 import MenuShimmer from "./MenuShimmer";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+import MenuCategory from "./MenuCategory";
+import { useState } from "react";
 
 const RestaurantMenu = () => {
+  // const [showIndex, setShowIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState(null);
+
   const { restId } = useParams();
 
-  const restInfo = useRestaurantMenu(restId)
+  const restInfo = useRestaurantMenu(restId);
 
   if (restInfo === null) return <MenuShimmer />;
 
@@ -21,63 +26,56 @@ const RestaurantMenu = () => {
   const { lastMileTravelString, deliveryTime } =
     restInfo?.cards[0]?.card?.card?.info?.sla;
 
-  const { itemCards } =
-    restInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
-      ?.card;
+  const itemCategory =
+    restInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (c) =>
+        c.card?.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
+
+    const handleItemClick = (index) => {
+      // If the clicked item is already open, close it. Otherwise, open it.
+      setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
+    };
 
   return (
-    <div className="rest-menu">
+    <div className=" w-[50%] mx-auto my-4">
       {/* section1  */}
-      <div className="rest-menu-info-rat">
-        <div className=" rest-menu-info">
+      <div className="py-4 flex justify-between items-center border-b border-dashed border-gray-300">
+        <div>
           <img src="" alt="" />
-          <h3>{name}</h3>
-          <p className="cuisines">{cuisines.join(", ")}</p>
-          <p className="location">{areaName + " | " + lastMileTravelString}</p>
+          <h3 className="text-xl font-semibold py-2">{name}</h3>
+          <p className="text-gray-500">{cuisines.join(", ")}</p>
+          <p className="text-gray-500">
+            {areaName + " | " + lastMileTravelString}
+          </p>
         </div>
-        <div className=" rest-menu-rating">
-          <p id="rating">{avgRating}⭐</p>
-          <p id="totalRating">{totalRatingsString}</p>
+        <div className="flex gap-4 items-center">
+          <p id="">{totalRatingsString}</p>
+          <p id="" className="bg-green-600 p-2 text-white rounded-md">
+            {avgRating}⭐
+          </p>
         </div>
       </div>
 
       {/* section2 */}
-      <div className="rest-menu-cost-time">
-        <h3>{deliveryTime + " mins"}</h3>
-        <h3>{costForTwoMessage}</h3>
+      <div className="flex gap-8 items-center py-4 border-b border-dashed border-gray-300">
+        <h3 className="text-xl font-semibold">{deliveryTime + " mins"}</h3>
+        <h3 className="text-xl font-semibold">{costForTwoMessage}</h3>
       </div>
 
       {/* section3 */}
-      <div className="rest-menu-items">
-        <h3 className="menu-title">Menu</h3>
-        {itemCards.map((item) => (
-          <div className="rest-menu-item-list" key={item?.card?.info?.id}>
-            <div className="rest-menu-name-desc-price">
-              <p>{item?.card?.info?.name}</p>
-              <p className="menu-price">{"₹ " + (item?.card?.info?.price / 100 || item?.card?.info?.defaultPrice)}</p>
-              <p className="menu-item-desc">{item?.card?.info?.description}</p>
-            </div>
-            <div className="rest-menu-img-add">
-              <button className="add-item">Add</button>
-              <img
-                src={
-                  "//media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/" +
-                  item?.card?.info?.imageId
-                }
-                alt=""
-                className="menu-img"
-              />
-            </div>
-          </div>
-        ))}
-      </div>
+      {/* Item Category */}
+      {itemCategory.map((category, index) => (
+        <MenuCategory
+          key={category?.card?.card?.title}
+          data={category?.card?.card}
+          showItem={index === openIndex && true}
+          setShowItem={() => handleItemClick(index)}
+        />
+      ))}
     </div>
   );
-  {
-    /* <h4>{restInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.categories[0].title}</h4> */
-  }
 };
 
 export default RestaurantMenu;
-
-//media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/
