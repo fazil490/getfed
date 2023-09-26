@@ -2,17 +2,20 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import userContext from "../context/userContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const cartItems = useSelector((store) => store.cart.items);
+
   const onlineStatus = useOnlineStatus();
 
   const { loggedInUser } = useContext(userContext);
 
   const [authBtn, setAuthBtn] = useState("Login");
   return (
-    <header className="header border-b">
-      <nav className="nav-bar flex justify-between items-center p-4 w-[90%] mx-[auto] my-4">
-        <div className="nav-brand">
+    <header className="header border-b-2">
+      <nav className="nav-bar flex justify-between items-center p-4 w-[80%] mx-[auto] my-4 mt-0">
+        <div className="nav-brand flex items-center gap-10">
           <Link to="/" className="link">
             <h1 className="brand-name text-3xl font-bold text-green-600">
               {" "}
@@ -20,19 +23,15 @@ const Header = () => {
               <span className="getfed text-red-500">F</span>ed{" "}
             </h1>
           </Link>
-        </div>
-        <div className="location">
-          <img />
-          <Link
-            to="/"
-            className="link text-lg text-green-600 hover:text-red-500"
-          >
-            Chennai, India
-          </Link>
+          <div>
+            <h2 className="text-green-600 text-xs cursor-pointer">
+              Chennai, India
+            </h2>
+          </div>
         </div>
 
         <div className="nav-list">
-          <ul className="flex gap-7 ">
+          <ul className="flex gap-7">
             <li className=" text-green-600 hover:text-red-500">
               {" "}
               <Link to="/" className="link">
@@ -41,7 +40,9 @@ const Header = () => {
             </li>
             <li className="text-green-600 hover:text-red-500">
               {" "}
-              <Link to="/" className="link">Restaurants</Link>
+              <Link to="/" className="link">
+                Restaurants
+              </Link>
             </li>
             <li className=" text-green-600 hover:text-red-500">
               {" "}
@@ -49,10 +50,7 @@ const Header = () => {
                 Groceries
               </Link>
             </li>
-            <li className=" text-green-600 hover:text-red-500">
-              {" "}
-              <Link className="link">Cart</Link>
-            </li>
+
             <li className=" text-green-600 hover:text-red-500">
               {" "}
               <Link to="/about" className="link">
@@ -65,9 +63,20 @@ const Header = () => {
                 Contact
               </Link>
             </li>
+          </ul>
+        </div>
+        <div>
+          <ul className="flex gap-4 items-center">
             <li className=" text-green-600 hover:text-red-500">
+              {" "}
+              <Link to="/cart" className="link font-bold">
+                {cartItems.length}
+              </Link>
+            </li>
+            <li className=" text-green-600 hover:text-red-500 hover:shadow-md px-4 py-2 text-sm rounded-lg">
               <Link to="/login">
                 <button
+                  className="font-semibold"
                   onClick={() => {
                     authBtn === "Login"
                       ? setAuthBtn("Logout")
@@ -78,12 +87,8 @@ const Header = () => {
                 </button>
               </Link>
             </li>
-            <li className=" text-green-600 hover:text-red-500">
+            <li className=" text-white text-sm bg-red-400 hover:bg-red-500 cursor-pointer px-4 py-2 shadow-md rounded-lg ">
               {loggedInUser}
-            </li>
-            <li className=" text-green-600 hover:text-red-500">
-              {onlineStatus === true ? "🟢" : "🔴"}
-              {/* ✅🟢❌🚫❗ */}
             </li>
           </ul>
         </div>
