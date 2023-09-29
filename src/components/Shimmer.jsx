@@ -1,7 +1,7 @@
 const Shimmer = () => {
   return (
     <main className="main-container w-[80%] my-4 mx-[auto]">
-      <div className="w-[50%] mx-auto my-8">
+      <div className="w-[50%] mx-auto my-8 ">
         <input
           className="mx-4 px-4 py-2 rounded-md shadow-md w-[80%]"
           type="search"
@@ -26,78 +26,78 @@ const Shimmer = () => {
         >
           Top Rated
         </button>
-        <div className="shimmer-container rest-list m-4 grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          <div className="shimmer-car w-[250px] mx-[auto] my-4 shadow-md">
-            <div className="shimmer-image w-[250px] h-[170px] bg-gray-100"></div>
-            <div className="shimmer-title p-4 m-4 w-[60%] bg-gray-100"></div>
-            <div className="shimmer-rating p-4 m-4 w-[40%] bg-gray-100"></div>
-            <div className="shimmer-desc p-4 m-4 w-[60%] bg-gray-100"></div>
+        <div className="m-4 grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
+          <div className=" w-[250px] mx-auto my-4 shadow-md  rounded-xl">
+            <div className="w-[250px] h-[170px] bg-gray-100  rounded-t-xl"></div>
+            <div className="p-4 m-4 w-[60%] bg-gray-100"></div>
+            <div className="p-4 m-4 w-[40%] bg-gray-100"></div>
+            <div className="p-4 m-4 w-[60%] bg-gray-100"></div>
           </div>
-          <div className="shimmer-car w-[250px] m-[auto] shadow-md">
-            <div className="shimmer-image w-[250px] h-[170px] bg-gray-100"></div>
-            <div className="shimmer-title p-4 m-4 w-[60%] bg-gray-100"></div>
-            <div className="shimmer-rating p-4 m-4 w-[40%] bg-gray-100"></div>
-            <div className="shimmer-desc p-4 m-4 w-[60%] bg-gray-100"></div>
+          <div className=" w-[250px] mx-auto my-4 shadow-md  rounded-xl">
+            <div className="w-[250px] h-[170px] bg-gray-100  rounded-t-xl"></div>
+            <div className="p-4 m-4 w-[60%] bg-gray-100"></div>
+            <div className="p-4 m-4 w-[40%] bg-gray-100"></div>
+            <div className="p-4 m-4 w-[60%] bg-gray-100"></div>
           </div>
-          <div className="shimmer-car w-[250px] m-[auto] shadow-md">
-            <div className="shimmer-image w-[250px] h-[170px] bg-gray-100"></div>
-            <div className="shimmer-title p-4 m-4 w-[60%] bg-gray-100"></div>
-            <div className="shimmer-rating p-4 m-4 w-[40%] bg-gray-100"></div>
-            <div className="shimmer-desc p-4 m-4 w-[60%] bg-gray-100"></div>
+          <div className=" w-[250px] mx-auto my-4 shadow-md  rounded-xl">
+            <div className="w-[250px] h-[170px] bg-gray-100  rounded-t-xl"></div>
+            <div className="p-4 m-4 w-[60%] bg-gray-100"></div>
+            <div className="p-4 m-4 w-[40%] bg-gray-100"></div>
+            <div className="p-4 m-4 w-[60%] bg-gray-100"></div>
           </div>
-          <div className="shimmer-car w-[250px] m-[auto] shadow-md">
-            <div className="shimmer-image w-[250px] h-[170px] bg-gray-100"></div>
-            <div className="shimmer-title p-4 m-4 w-[60%] bg-gray-100"></div>
-            <div className="shimmer-rating p-4 m-4 w-[40%] bg-gray-100"></div>
-            <div className="shimmer-desc p-4 m-4 w-[60%] bg-gray-100"></div>
+          <div className=" w-[250px] mx-auto my-4 shadow-md  rounded-xl">
+            <div className="w-[250px] h-[170px] bg-gray-100  rounded-t-xl"></div>
+            <div className="p-4 m-4 w-[60%] bg-gray-100"></div>
+            <div className="p-4 m-4 w-[40%] bg-gray-100"></div>
+            <div className="p-4 m-4 w-[60%] bg-gray-100"></div>
           </div>
-          <div className="shimmer-car w-[250px] m-[auto] shadow-md">
-            <div className="shimmer-image w-[250px] h-[170px] bg-gray-100"></div>
-            <div className="shimmer-title p-4 m-4 w-[60%] bg-gray-100"></div>
-            <div className="shimmer-rating p-4 m-4 w-[40%] bg-gray-100"></div>
-            <div className="shimmer-desc p-4 m-4 w-[60%] bg-gray-100"></div>
+          <div className=" w-[250px] mx-auto my-4 shadow-md  rounded-xl">
+            <div className="w-[250px] h-[170px] bg-gray-100  rounded-t-xl"></div>
+            <div className="p-4 m-4 w-[60%] bg-gray-100"></div>
+            <div className="p-4 m-4 w-[40%] bg-gray-100"></div>
+            <div className="p-4 m-4 w-[60%] bg-gray-100"></div>
           </div>
-          <div className="shimmer-car w-[250px] m-[auto] shadow-md">
-            <div className="shimmer-image w-[250px] h-[170px] bg-gray-100"></div>
-            <div className="shimmer-title p-4 m-4 w-[60%] bg-gray-100"></div>
-            <div className="shimmer-rating p-4 m-4 w-[40%] bg-gray-100"></div>
-            <div className="shimmer-desc p-4 m-4 w-[60%] bg-gray-100"></div>
+          <div className=" w-[250px] mx-auto my-4 shadow-md  rounded-xl">
+            <div className="w-[250px] h-[170px] bg-gray-100  rounded-t-xl"></div>
+            <div className="p-4 m-4 w-[60%] bg-gray-100"></div>
+            <div className="p-4 m-4 w-[40%] bg-gray-100"></div>
+            <div className="p-4 m-4 w-[60%] bg-gray-100"></div>
           </div>
-          <div className="shimmer-car w-[250px] m-[auto] shadow-md">
-            <div className="shimmer-image w-[250px] h-[170px] bg-gray-100"></div>
-            <div className="shimmer-title p-4 m-4 w-[60%] bg-gray-100"></div>
-            <div className="shimmer-rating p-4 m-4 w-[40%] bg-gray-100"></div>
-            <div className="shimmer-desc p-4 m-4 w-[60%] bg-gray-100"></div>
+          <div className=" w-[250px] mx-auto my-4 shadow-md  rounded-xl">
+            <div className="w-[250px] h-[170px] bg-gray-100  rounded-t-xl"></div>
+            <div className="p-4 m-4 w-[60%] bg-gray-100"></div>
+            <div className="p-4 m-4 w-[40%] bg-gray-100"></div>
+            <div className="p-4 m-4 w-[60%] bg-gray-100"></div>
           </div>
-          <div className="shimmer-car w-[250px] m-[auto] shadow-md">
-            <div className="shimmer-image w-[250px] h-[170px] bg-gray-100"></div>
-            <div className="shimmer-title p-4 m-4 w-[60%] bg-gray-100"></div>
-            <div className="shimmer-rating p-4 m-4 w-[40%] bg-gray-100"></div>
-            <div className="shimmer-desc p-4 m-4 w-[60%] bg-gray-100"></div>
+          <div className=" w-[250px] mx-auto my-4 shadow-md  rounded-xl">
+            <div className="w-[250px] h-[170px] bg-gray-100  rounded-t-xl"></div>
+            <div className="p-4 m-4 w-[60%] bg-gray-100"></div>
+            <div className="p-4 m-4 w-[40%] bg-gray-100"></div>
+            <div className="p-4 m-4 w-[60%] bg-gray-100"></div>
           </div>
-          <div className="shimmer-car w-[250px] m-[auto] shadow-md">
-            <div className="shimmer-image w-[250px] h-[170px] bg-gray-100"></div>
-            <div className="shimmer-title p-4 m-4 w-[60%] bg-gray-100"></div>
-            <div className="shimmer-rating p-4 m-4 w-[40%] bg-gray-100"></div>
-            <div className="shimmer-desc p-4 m-4 w-[60%] bg-gray-100"></div>
+          <div className=" w-[250px] mx-auto my-4 shadow-md  rounded-xl">
+            <div className="w-[250px] h-[170px] bg-gray-100  rounded-t-xl"></div>
+            <div className="p-4 m-4 w-[60%] bg-gray-100"></div>
+            <div className="p-4 m-4 w-[40%] bg-gray-100"></div>
+            <div className="p-4 m-4 w-[60%] bg-gray-100"></div>
           </div>
-          <div className="shimmer-car w-[250px] m-[auto] shadow-md">
-            <div className="shimmer-image w-[250px] h-[170px] bg-gray-100"></div>
-            <div className="shimmer-title p-4 m-4 w-[60%] bg-gray-100"></div>
-            <div className="shimmer-rating p-4 m-4 w-[40%] bg-gray-100"></div>
-            <div className="shimmer-desc p-4 m-4 w-[60%] bg-gray-100"></div>
+          <div className=" w-[250px] mx-auto my-4 shadow-md  rounded-xl">
+            <div className="w-[250px] h-[170px] bg-gray-100  rounded-t-xl"></div>
+            <div className="p-4 m-4 w-[60%] bg-gray-100"></div>
+            <div className="p-4 m-4 w-[40%] bg-gray-100"></div>
+            <div className="p-4 m-4 w-[60%] bg-gray-100"></div>
           </div>
-          <div className="shimmer-car w-[250px] m-[auto] shadow-md">
-            <div className="shimmer-image w-[250px] h-[170px] bg-gray-100"></div>
-            <div className="shimmer-title p-4 m-4 w-[60%] bg-gray-100"></div>
-            <div className="shimmer-rating p-4 m-4 w-[40%] bg-gray-100"></div>
-            <div className="shimmer-desc p-4 m-4 w-[60%] bg-gray-100"></div>
+          <div className=" w-[250px] mx-auto my-4 shadow-md  rounded-xl">
+            <div className="w-[250px] h-[170px] bg-gray-100  rounded-t-xl"></div>
+            <div className="p-4 m-4 w-[60%] bg-gray-100"></div>
+            <div className="p-4 m-4 w-[40%] bg-gray-100"></div>
+            <div className="p-4 m-4 w-[60%] bg-gray-100"></div>
           </div>
-          <div className="shimmer-car w-[250px] m-[auto] shadow-md">
-            <div className="shimmer-image w-[250px] h-[170px] bg-gray-100"></div>
-            <div className="shimmer-title p-4 m-4 w-[60%] bg-gray-100"></div>
-            <div className="shimmer-rating p-4 m-4 w-[40%] bg-gray-100"></div>
-            <div className="shimmer-desc p-4 m-4 w-[60%] bg-gray-100"></div>
+          <div className=" w-[250px] mx-auto my-4 shadow-md  rounded-xl">
+            <div className="w-[250px] h-[170px] bg-gray-100  rounded-t-xl"></div>
+            <div className="p-4 m-4 w-[60%] bg-gray-100"></div>
+            <div className="p-4 m-4 w-[40%] bg-gray-100"></div>
+            <div className="p-4 m-4 w-[60%] bg-gray-100"></div>
           </div>
         </div>
       </div>

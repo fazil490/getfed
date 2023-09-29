@@ -12,6 +12,7 @@ const MenuList = ({ items }) => {
     <div>
       {items.map((item) => ( 
         <div
+        data-testid= "menuItems"
           key={item?.card?.info?.id}
           className="flex justify-between items-center gap-4 my-4 p-4 bg-white shadow-sm hover:shadow-md"
         >
