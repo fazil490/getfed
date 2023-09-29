@@ -159,3 +159,28 @@
     - Context API allows to pass in data through any components.
     - createContext({}) - to create a context
     - useContext(contextName) - to use a context
+
+# Redux Toolkit and React-Reduc
+    - Create a redux store
+    - Create Slices inside a store
+    - Reducers and Actions
+    - Subscribing to the store using useSelector() hook
+    - Dispatch an action on event handler using useDispatch() hook
+
+# Types of Testing
+    - Unit Testing
+    - Integeration Testing
+    - End-to-End Testing
+
+# Setting up Testing
+    - Install React Testing Library
+    - Install Jest
+    - Install Babel 
+    - Configure Babel
+    - Configure parcel file to disable default babel transpilation
+    - Jest configuration
+    - Install jsdom library
+    - Install @babel/preset-react
+    - Include @babel/preset-react in babel.config file - to support JSX in the test cases
+    - @testing-library/jest-dom - to render 
+    - watch-test : jest --watch = to run the test continously
