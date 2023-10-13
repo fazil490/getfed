@@ -7,9 +7,11 @@ import { useEffect, useState } from "react";
 const Main = () => {
   const [listOfRest, setListOfRest] = useState([]);
 
-  const [filteredRestaurant, setFilteredRestaurant] =useState([]);
+  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
   const [searchText, setSearchText] = useState("");
+
+  const [topRated, setTopRated] = useState(true);
 
   useEffect(() => {
     fetchData();
@@ -23,7 +25,21 @@ const Main = () => {
     setListOfRest(
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-    setFilteredRestaurant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setFilteredRestaurant(
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+  };
+
+  const toggleTopRated = () => {
+    setTopRated(!topRated);
+    console.log(topRated);
+    topRated
+      ? setFilteredRestaurant(
+          listOfRest
+            .filter((res) => res?.info?.avgRating > 4.3)
+            .sort((a, b) => b.info.avgRating - a.info.avgRating)
+        )
+      : setFilteredRestaurant(listOfRest);
   };
 
   const onlineStatus = useOnlineStatus();
@@ -44,13 +60,17 @@ const Main = () => {
     <main className="main-container w-[80%] my-4 mx-[auto] ">
       <div className="w-[50%] mx-auto my-8">
         <input
-        data-testid = "searchInput"
+          data-testid="searchInput"
           className="mx-4 px-4 py-2 rounded-md w-[80%] bg-gray-100"
           type="search"
           placeholder="Search for Restaurants and Cuisines"
           value={searchText}
           onChange={(e) => {
             setSearchText(e.target.value);
+            // console.log(searchText)
+            // if(searchText === "") {
+            //   setFilteredRestaurant(listOfRest)
+            // }
           }}
         ></input>
         <button
@@ -58,10 +78,12 @@ const Main = () => {
           onClick={() => {
             const filteredRestaurant = listOfRest.filter(
               (res) =>
-                (res?.info?.name
+                res?.info?.name
                   .toLowerCase()
                   .includes(searchText.toLowerCase()) ||
-                res?.info?.cuisines.includes(searchText))
+                res?.info?.cuisines?.some((cuisine) =>
+                  cuisine.toLowerCase().includes(searchText.toLowerCase())
+                )
             );
             setFilteredRestaurant(filteredRestaurant);
           }}
@@ -74,12 +96,7 @@ const Main = () => {
           Restaurants offer online food delivery in Chennai
         </h2>
         <button
-          onClick={() => {
-            const filteredList = listOfRest.filter(
-              (res) => res?.info?.avgRating > 4.2
-            );
-            setFilteredRestaurant(filteredList);
-          }}
+          onClick={toggleTopRated}
           className="filter-btn bg-slate-50 p-2 my-2 text-gray-600 border rounded-3xl hover:bg-slate-100"
         >
           Top Rated
