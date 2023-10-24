@@ -30,15 +30,16 @@ const Main = () => {
     );
   };
 
+  
+
   const toggleTopRated = () => {
     setTopRated(!topRated);
-    console.log(topRated);
+    const topRatedRestaurantSorted = listOfRest
+      .filter((res) => res?.info?.avgRating > 4.3)
+      .sort((a, b) => b.info.avgRating - a.info.avgRating);
+
     topRated
-      ? setFilteredRestaurant(
-          listOfRest
-            .filter((res) => res?.info?.avgRating > 4.3)
-            .sort((a, b) => b.info.avgRating - a.info.avgRating)
-        )
+      ? setFilteredRestaurant(topRatedRestaurantSorted)
       : setFilteredRestaurant(listOfRest);
   };
 
@@ -63,19 +64,10 @@ const Main = () => {
           data-testid="searchInput"
           className="mx-4 px-4 py-2 rounded-md w-[80%] bg-gray-100"
           type="search"
-          placeholder="Search for Restaurants and Cuisines"
+          placeholder="Search for Restaurants, Cuisines or Places"
           value={searchText}
           onChange={(e) => {
             setSearchText(e.target.value);
-            // console.log(searchText)
-            // if(searchText === "") {
-            //   setFilteredRestaurant(listOfRest)
-            // }
-          }}
-        ></input>
-        <button
-          className="search-btn bg-red-500 hover:bg-green-600 shadow-md px-4 py-2 text-white rounded-md"
-          onClick={() => {
             const filteredRestaurant = listOfRest.filter(
               (res) =>
                 res?.info?.name
@@ -83,10 +75,16 @@ const Main = () => {
                   .includes(searchText.toLowerCase()) ||
                 res?.info?.cuisines?.some((cuisine) =>
                   cuisine.toLowerCase().includes(searchText.toLowerCase())
-                )
+                ) ||
+                res?.info?.areaName
+                  .toLowerCase()
+                  .includes(searchText.toLowerCase())
             );
             setFilteredRestaurant(filteredRestaurant);
           }}
+        ></input>
+        <button
+          className="search-btn bg-red-500 hover:bg-green-600 shadow-md px-4 py-2 text-white rounded-md"
         >
           Search
         </button>
@@ -97,7 +95,11 @@ const Main = () => {
         </h2>
         <button
           onClick={toggleTopRated}
-          className="filter-btn bg-slate-50 p-2 my-2 text-gray-600 border rounded-3xl hover:bg-slate-100"
+          className={`filter-btn ${
+            !topRated
+              ? "bg-green-600 text-white hover:bg-green-500"
+              : "bg-slate-50 text-gray-600 hover:bg-slate-100"
+          } p-2 my-2  border rounded-3xl `}
         >
           Top Rated
         </button>
