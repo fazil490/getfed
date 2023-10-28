@@ -33,24 +33,24 @@ const Header = () => {
                 Restaurants
               </Link>
             </li>
-            <li className=" text-green-600 hover:text-red-500">
+            {/* <li className=" text-green-600 hover:text-red-500">
               {" "}
               <Link to="/groceries" className="link">
                 Groceries
               </Link>
-            </li>
+            </li> */}
             <li className=" text-green-600 hover:text-red-500">
               {" "}
               <Link to="/contact" className="link">
                 Contact
               </Link>
             </li>
-            <li className=" text-green-600 hover:text-red-500">
+            {/* <li className=" text-green-600 hover:text-red-500">
               {" "}
               <Link to="/about" className="link">
                 About
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div>

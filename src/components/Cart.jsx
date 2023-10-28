@@ -8,7 +8,7 @@ const Cart = () => {
     dispatch(clearCart());
   };
   const cartItems = useSelector((store) => store.cart.items);
-  console.log(cartItems)
+  console.log(cartItems?.card?.info?.price);
 
   return (
     <div className="w-[60%] mx-auto my-8">
@@ -51,9 +51,12 @@ const Cart = () => {
           ))}
           <div className="py-4 flex justify-between items-center gap-4">
             <h1 className="text-lg py-4">Total Bill Amount : </h1>
-            <h1 className="">₹ </h1>
+            <h1 className="">₹
+            </h1>
           </div>
-          <button className="px-4 py-2 w-[100%] mx-auto bg-green-600 text-white rounded-xl">Place Order</button>
+          <button className="px-4 py-2 w-[100%] mx-auto bg-green-600 text-white rounded-xl">
+            Place Order
+          </button>
         </div>
       </div>
     </div>
