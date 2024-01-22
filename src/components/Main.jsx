@@ -59,10 +59,10 @@ const Main = () => {
     <Shimmer />
   ) : (
     <main className="main-container w-[80%] my-4 mx-[auto] ">
-      <div className="w-[50%] mx-auto my-8">
+      <div className="flex justify-center items-center gap-4 my-8">
         <input
           data-testid="searchInput"
-          className="mx-4 px-4 py-2 rounded-md w-[80%] bg-gray-100"
+          className="px-20 py-2 rounded-md bg-gray-100"
           type="search"
           placeholder="Search for Restaurants, Cuisines or Places"
           value={searchText}
@@ -90,7 +90,7 @@ const Main = () => {
         </button>
       </div>
       <div className="restuarants">
-        <h2 className="text-2xl font-medium py-2 my-2">
+        <h2 className="text-xl lg:text-2xl font-medium py-2 my-2">
           Restaurants offer online food delivery in Chennai
         </h2>
         <button

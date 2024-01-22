@@ -39,12 +39,12 @@ const RestaurantMenu = () => {
     };
 
   return (
-    <div className=" w-[50%] mx-auto my-4">
+    <div className=" w-[80%] lg:w-[50%] mx-auto my-4">
       {/* section1  */}
       <div className="py-4 flex justify-between items-center border-b border-dashed border-gray-300">
         <div>
           <img src="" alt="" />
-          <h3 className="text-xl font-semibold py-2">{name}</h3>
+          <h3 className="text-lg lg:text-xl font-semibold py-2">{name}</h3>
           <p className="text-gray-500">{cuisines.join(", ")}</p>
           <p className="text-gray-500">
             {areaName + " | " + lastMileTravelString}
@@ -60,8 +60,8 @@ const RestaurantMenu = () => {
 
       {/* section2 */}
       <div className="flex gap-8 items-center py-4 border-b border-dashed border-gray-300">
-        <h3 className="text-xl font-semibold">{deliveryTime + " mins"}</h3>
-        <h3 className="text-xl font-semibold">{costForTwoMessage}</h3>
+        <h3 className="text-lg lg:text-xl font-semibold">{deliveryTime + " mins"}</h3>
+        <h3 className="text-lg lg:text-xl font-semibold">{costForTwoMessage}</h3>
       </div>
 
       {/* section3 */}

@@ -7,7 +7,7 @@ const MenuCategory = ({ data, showItem, setShowItem }) => {
   return (
     <div className="my-4 py-4 px-2 text-gray-700 shadow-md  cursor-pointer">
       <div className="flex justify-between" onClick={handleClick}>
-        <span className="font-medium text-lg">
+        <span className="font-medium text-base lg:text-lg">
           {data.title} ({data?.itemCards.length})
         </span>
         <span>▼</span>

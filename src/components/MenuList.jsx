@@ -17,8 +17,8 @@ const MenuList = ({ items }) => {
           className="flex justify-between items-center gap-4 my-4 p-4 bg-white shadow-sm hover:shadow-md"
         >
           <div className="w-[80%]">
-            <p className="text-lg font-semibold">{item?.card?.info?.name}</p>
-            <p className="text-md text-red-600">
+            <p className="text-base lg:text-lg font-semibold">{item?.card?.info?.name}</p>
+            <p className="text-base text-red-600">
               {"₹ " +
                 (item?.card?.info?.price / 100 ||
                   item?.card?.info?.defaultPrice / 100)}

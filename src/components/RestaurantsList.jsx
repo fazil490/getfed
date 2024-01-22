@@ -8,7 +8,7 @@ const RestaurantsList = (props) => {
     <div data-testid="restCard" className="w-[250px] mx-[auto] my-4 shadow-md hover:shadow-xl rounded-xl">
       <img className="w-[250px] h-[170px] rounded-xl rounded-b-none" src={CDN_URL + cloudinaryImageId} />
       <div className="text-left p-2">
-        <h4 className="text-xl font-medium my-1">{name}</h4>
+        <h4 className="text-lg lg:text-xl font-medium my-1">{name}</h4>
         <p id="rating" className="bg-green-600 w-fit p-1 my-1 text-white rounded-md">{avgRating}⭐</p>
         <p className="text-gray-700 my-1">{cuisines.join(", ")}</p>
         
