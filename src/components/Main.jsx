@@ -59,10 +59,10 @@ const Main = () => {
     <Shimmer />
   ) : (
     <main className="main-container w-[80%] my-4 mx-[auto] ">
-      <div className="w-[80%] lg:w-[50%] mx-auto my-8">
+      <div className="w-[100%] lg:w-[50%] mx-auto my-8">
         <input
           data-testid="searchInput"
-          className="mr-2 px-4 py-2 rounded-md w-[80%] shadow-md"
+          className="mx-4 px-4 py-2 rounded-md w-[80%] shadow-md"
           type="search"
           placeholder="Search for Restaurants, Cuisines or Places"
           value={searchText}
