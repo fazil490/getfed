@@ -11,15 +11,15 @@ const Cart = () => {
   console.log(cartItems?.card?.info?.price);
 
   return (
-    <div className="w-[60%] mx-auto my-8">
+    <div className="w-[80%] lg:w-[60%] mx-auto my-8">
       <div>
-        <h1 className="text-3xl font-bold text-center m-8">
+        <h1 className="text-2xl lg:text-3xl font-bold text-center m-8">
           <span className="text-green-600">Your </span>
           <span className="text-red-500">Cart</span>
         </h1>
       </div>
-      <div className="flex gap-8 justify-center">
-        <div className="bg-gray-100 p-4 rounded-md w-[60%]">
+      <div className="grid lg:grid-cols-2 gap-8 justify-center">
+        <div className="bg-gray-100 p-4 rounded-md">
           <h1 className="text-xl font-semibold">Cart Items</h1>
           {cartItems.length === 0 && (
             <h1 className="text-lg text-center p-4">Your Cart is empty.</h1>
@@ -34,7 +34,7 @@ const Cart = () => {
             </button>
           )}
         </div>
-        <div className="bg-gray-100 p-4 rounded-md h-min w-[40%]">
+        <div className="bg-gray-100 p-4 rounded-md h-min">
           <h1 className="text-xl font-semibold">Bill Details</h1>
           {cartItems.map((price) => (
             <div

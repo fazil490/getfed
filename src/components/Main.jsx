@@ -3,6 +3,7 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { useEffect, useState } from "react";
+import { IoSearch } from "react-icons/io5";
 
 const Main = () => {
   const [listOfRest, setListOfRest] = useState([]);
@@ -84,9 +85,9 @@ const Main = () => {
           }}
         ></input>
         <button
-          className="search-btn bg-red-500 hover:bg-green-600 shadow-md px-4 py-2 text-white rounded-md"
+          className="search-btn bg-red-500 hover:bg-green-600 shadow-md p-2 text-white rounded-md"
         >
-          Search
+          <IoSearch />
         </button>
       </div>
       <div className="restuarants">

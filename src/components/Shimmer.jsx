@@ -1,14 +1,16 @@
+import { IoSearch } from "react-icons/io5";
+
 const Shimmer = () => {
   return (
     <main className="main-container w-[80%] my-4 mx-[auto]">
       <div className="w-[50%] mx-auto my-8 ">
         <input
-          className="mx-4 px-4 py-2 rounded-md shadow-md w-[80%]"
+          className="mx-4 px-4 py-2 rounded-md w-[70%] shadow-md"
           type="search"
           placeholder="Search for Restaurants, Cuisines or Places"
         ></input>
         <button className="search-btn bg-red-400 hover:bg-red-500 shadow-md px-4 py-2 text-white rounded-md">
-          Search
+        <IoSearch />
         </button>
       </div>
       <div className="restuarants">
