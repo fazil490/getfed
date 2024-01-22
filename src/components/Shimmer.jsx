@@ -5,7 +5,7 @@ const Shimmer = () => {
         <input
           className="mx-4 px-4 py-2 rounded-md shadow-md w-[80%]"
           type="search"
-          placeholder="Search for Restaurants and Cuisines"
+          placeholder="Search for Restaurants, Cuisines or Places"
         ></input>
         <button className="search-btn bg-red-400 hover:bg-red-500 shadow-md px-4 py-2 text-white rounded-md">
           Search
