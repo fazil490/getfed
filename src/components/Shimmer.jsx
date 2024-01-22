@@ -3,7 +3,7 @@ const Shimmer = () => {
     <main className="main-container w-[80%] my-4 mx-[auto]">
       <div className="w-[50%] mx-auto my-8 ">
         <input
-          className="mx-4 px-4 py-2 rounded-md shadow-md w-[80%]"
+          className="mr-2 px-4 py-2 rounded-md shadow-md w-[80%]"
           type="search"
           placeholder="Search for Restaurants, Cuisines or Places"
         ></input>
