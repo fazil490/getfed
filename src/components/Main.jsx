@@ -62,7 +62,7 @@ const Main = () => {
       <div className="w-[80%] lg:w-[50%] mx-auto my-8">
         <input
           data-testid="searchInput"
-          className="mx-4 px-4 py-2 rounded-md w-[80%] shadow-md"
+          className="mr-2 px-4 py-2 rounded-md w-[80%] shadow-md"
           type="search"
           placeholder="Search for Restaurants, Cuisines or Places"
           value={searchText}
